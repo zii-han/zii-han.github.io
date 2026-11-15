@@ -1,21 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <meta charset="utf-8">
-    <title>Buka Server Minecraft</title>
-
-    <script>
-        window.onload = function() {
-            window.location.href =
-                "minecraft://?addExternalServer=Ambatukam%20de%20Galaxy's%20SMP|premium.raehost.com:19253";
-        };
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#090b16" />
+  <title>Zii-Han — Developer Portfolio</title>
+  <meta name="description" content="Portofolio Zii-Han — still learning, always building." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#090b16;--panel:#111528;--panel2:#151b31;--text:#f4f5ff;--muted:#a1a8c2;--line:rgba(180,190,255,.13);--purple:#9b8cff;--cyan:#68dff5;--pink:#ff8fc8;--max:1120px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% 0%,rgba(104,223,245,.10),transparent 32%),radial-gradient(ellipse at 8% 18%,rgba(155,140,255,.13),transparent 34%),var(--bg);color:var(--text);font-family:Manrope,system-ui,sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}.mono{font-family:"DM Mono",monospace;color:var(--cyan);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}
+    header{position:sticky;top:0;z-index:10;background:rgba(9,11,22,.76);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}nav{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:800;letter-spacing:-.06em;font-size:1.35rem}.brand span{color:var(--purple)}.navlinks{display:flex;gap:26px;color:var(--muted);font-size:.88rem}.navlinks a:hover{color:var(--text)}.menu{display:none;background:none;border:1px solid var(--line);color:var(--text);padding:8px 12px;border-radius:10px}
+    .hero{min-height:670px;display:grid;grid-template-columns:1.12fr .88fr;align-items:center;gap:45px;padding:76px 0 90px}.eyebrow{display:inline-flex;gap:10px;align-items:center;padding:8px 13px;border:1px solid var(--line);border-radius:99px;background:rgba(255,255,255,.03);color:#c5c9df;font-size:.78rem}.dot{width:7px;height:7px;border-radius:50%;background:#80edb4;box-shadow:0 0 14px #80edb4}.hero h1{font-size:clamp(3.2rem,8vw,6.4rem);line-height:.98;letter-spacing:-.085em;margin:25px 0 18px}.hero h1 span{background:linear-gradient(100deg,var(--purple),var(--cyan));color:transparent;background-clip:text}.lead{max-width:570px;color:var(--muted);font-size:1.05rem}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 18px;border-radius:12px;font-weight:700;font-size:.88rem;border:1px solid var(--line);transition:.2s}.btn.primary{background:linear-gradient(110deg,#8170ef,#58cfe9);color:#080b16;border:0}.btn:hover{transform:translateY(-3px)}.mini-meta{display:flex;gap:24px;margin-top:42px;color:var(--muted);font-size:.8rem}.mini-meta b{display:block;color:var(--text);font-size:1rem}
+    .visual{position:relative;min-height:430px;display:grid;place-items:center}.orbit{position:absolute;width:350px;height:350px;border:1px solid rgba(155,140,255,.25);border-radius:50%;box-shadow:0 0 80px rgba(155,140,255,.08),inset 0 0 60px rgba(104,223,245,.04)}.orbit:before,.orbit:after{content:"";position:absolute;border:1px dashed rgba(104,223,245,.23);border-radius:50%;inset:25px}.orbit:after{inset:65px;border-color:rgba(255,143,200,.2)}.core{width:235px;height:285px;border-radius:46% 46% 28% 28%;background:linear-gradient(145deg,#252d50,#15192d 65%);border:1px solid rgba(190,190,255,.3);position:relative;overflow:hidden;box-shadow:0 30px 100px rgba(0,0,0,.45)}.core:before{content:"</>";position:absolute;inset:0;display:grid;place-items:center;font:800 5rem "DM Mono";color:rgba(164,153,255,.75);text-shadow:0 0 35px rgba(104,223,245,.3)}.core:after{content:"";position:absolute;width:210px;height:210px;border-radius:50%;background:linear-gradient(135deg,rgba(104,223,245,.18),rgba(255,143,200,.12));filter:blur(3px);top:-110px;right:-65px}.float{position:absolute;padding:12px 15px;border-radius:13px;background:#151a30;border:1px solid var(--line);box-shadow:0 12px 40px #0005;font: .78rem "DM Mono";color:#d8d9f4}.f1{top:65px;right:0}.f2{bottom:65px;left:0}.f3{bottom:18px;right:25px;color:var(--cyan)}
+    section{padding:88px 0;border-top:1px solid var(--line)}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:34px}.section-head h2{font-size:clamp(2rem,4vw,3rem);letter-spacing:-.065em;line-height:1.05;margin:8px 0 0}.section-head p{max-width:430px;color:var(--muted);font-size:.9rem;margin:0}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.panel{background:linear-gradient(145deg,rgba(21,27,49,.92),rgba(13,17,32,.92));border:1px solid var(--line);border-radius:20px;padding:26px}.panel p{color:var(--muted);margin-bottom:0}.quote{font-size:1.5rem;line-height:1.35;letter-spacing:-.04em}.quote span{color:var(--purple)}.tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}.tag{padding:7px 11px;border:1px solid var(--line);border-radius:9px;color:#c7cbe1;font: .74rem "DM Mono"}
+    .project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.project{position:relative;overflow:hidden;min-height:250px}.project-top{display:flex;justify-content:space-between;align-items:center}.project-icon{width:45px;height:45px;display:grid;place-items:center;border-radius:13px;background:rgba(155,140,255,.14);font-size:1.25rem}.project h3{font-size:1.35rem;letter-spacing:-.04em;margin:22px 0 8px}.project p{font-size:.9rem;color:var(--muted);max-width:480px}.project .tag{display:inline-block;margin:7px 5px 0 0}.project-link{display:inline-flex;margin-top:18px;color:var(--cyan);font-size:.85rem;font-weight:700}.project-link:hover{color:white}
+    .anime-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.anime-card{min-height:250px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;background:linear-gradient(145deg,rgba(155,140,255,.12),rgba(104,223,245,.06)),var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}.anime-art{height:115px;display:grid;place-items:center;font-size:3.4rem;filter:drop-shadow(0 12px 25px rgba(155,140,255,.25))}.anime-card h3{margin:0;font-size:1.05rem}.anime-card p{margin:4px 0 0;color:var(--muted);font-size:.8rem}.notice{color:var(--muted);font-size:.82rem;margin-top:18px}
+    .contact{display:flex;justify-content:space-between;align-items:center;gap:24px;background:linear-gradient(110deg,rgba(155,140,255,.15),rgba(104,223,245,.08));border:1px solid var(--line);border-radius:22px;padding:34px}.contact h2{font-size:2rem;letter-spacing:-.06em;margin:5px 0}.contact p{color:var(--muted);margin:0}.socials{display:flex;gap:10px;flex-wrap:wrap}footer{padding:28px 0;color:#7f87a4;font-size:.78rem;display:flex;justify-content:space-between;gap:15px}
+    @media(max-width:760px){.navlinks{display:none;position:absolute;top:72px;left:0;right:0;padding:20px;background:#0d1120;border-bottom:1px solid var(--line);flex-direction:column;gap:16px}.navlinks.open{display:flex}.menu{display:block}.hero{grid-template-columns:1fr;padding:65px 0 55px;gap:10px}.visual{min-height:350px}.orbit{width:290px;height:290px}.core{width:190px;height:235px}.f1{right:2%}.f2{left:1%}.section-head{display:block}.section-head p{margin-top:15px}.about-grid,.project-grid{grid-template-columns:1fr}.anime-wrap{grid-template-columns:1fr}.anime-card{min-height:190px}.anime-art{height:75px}.contact{display:block}.socials{margin-top:22px}footer{display:block}footer span{display:block;margin-top:6px}}
+  </style>
 </head>
 <body>
-    <p>Membuka Minecraft...</p>
+<header><nav class="wrap">
+  <a class="brand" href="#home">zii<span>.</span>han</a>
+  <div class="navlinks" id="navlinks"><a href="#about">About</a><a href="#projects">Projects</a><a href="#anime">Anime corner</a><a href="#contact">Contact</a></div>
+  <button class="menu" id="menu" aria-label="Buka menu">☰</button>
+</nav></header>
+<main>
+  <div class="wrap hero" id="home">
+    <div>
+      <div class="eyebrow"><i class="dot"></i> OPEN TO LEARNING & BUILDING</div>
+      <div class="mono" style="margin-top:25px">Hello, world! I'm</div>
+      <h1>Zii<span>-Han.</span></h1>
+      <p class="lead">A curious learner exploring the world of code, one project at a time. Still learning, still building, and always looking for the next thing to create.</p>
+      <div class="actions"><a class="btn primary" href="#projects">Explore projects ↘</a><a class="btn" href="https://github.com/zii-han" target="_blank" rel="noreferrer">↗ GitHub profile</a></div>
+      <div class="mini-meta"><div><b>08</b>Public repositories</div><div><b>01</b>GitHub star</div><div><b>∞</b>Things to learn</div></div>
+    </div>
+    <div class="visual" aria-label="Ilustrasi abstrak developer">
+      <div class="orbit"></div><div class="core"></div>
+      <div class="float f1">while (learning) { }</div><div class="float f2">console.log("hello");</div><div class="float f3">0101 · CREATE</div>
+    </div>
+  </div>
 
-    <a href="minecraft://?addExternalServer=Ambatukam%20de%20Galaxy's%20SMP|https://premium2.raehost.com:19140">
-        Klik jika tidak terbuka otomatis
-    </a>
+  <section id="about"><div class="wrap">
+    <div class="section-head"><div><div class="mono">01 / About</div><h2>A little about<br>my journey.</h2></div><p>Not an expert — just someone who enjoys experimenting, solving problems, and turning ideas into something real.</p></div>
+    <div class="about-grid">
+      <div class="panel"><div class="quote">“Still learn.”<br><span>Always in progress.</span></div><p>Kalimat singkat dari bio GitHub yang jadi prinsip halaman ini: terus belajar, mencoba hal baru, dan berkembang lewat proyek kecil.</p></div>
+      <div class="panel"><div class="mono">CURRENT INTERESTS</div><h3 style="margin:12px 0 0">Building things with code.</h3><p>Jejak repository publik menunjukkan eksplorasi HTML dan eksperimen komunikasi MQTT. Detail skill lain bisa ditambahkan saat sudah dikonfirmasi.</p><div class="tags"><span class="tag">HTML</span><span class="tag">MQTT · exploring</span><span class="tag">Learning</span></div></div>
+    </div>
+  </div></section>
+
+  <section id="projects"><div class="wrap">
+    <div class="section-head"><div><div class="mono">02 / Selected work</div><h2>Projects & experiments.</h2></div><p>Beberapa repository publik yang terlihat di GitHub. Deskripsi dibuat hati-hati berdasarkan struktur repository yang tersedia.</p></div>
+    <div class="project-grid">
+      <article class="panel project"><div class="project-top"><div class="project-icon">⌁</div><span class="mono">EXPERIMENT / 01</span></div><h3>MQTT-test</h3><p>Repository eksperimen MQTT dengan file halaman <code>index.html</code>, <code>reciver.html</code>, <code>tranciver.html</code>, dan folder script. Cocok ditampilkan sebagai eksplorasi komunikasi data.</p><span class="tag">HTML</span><span class="tag">MQTT</span><span class="tag">Experiment</span><br><a class="project-link" href="https://github.com/zii-han/MQTT-test" target="_blank" rel="noreferrer">View repository ↗</a></article>
+      <article class="panel project"><div class="project-top"><div class="project-icon">⌘</div><span class="mono">WEB / 02</span></div><h3>zii-han.github.io</h3><p>Repository website GitHub Pages milik akun Zii-Han, berisi <code>index.html</code> dan aset gambar. Detail fitur website belum dicantumkan di deskripsi repository.</p><span class="tag">HTML</span><span class="tag">GitHub Pages</span><span class="tag">Web</span><br><a class="project-link" href="https://github.com/zii-han/zii-han.github.io" target="_blank" rel="noreferrer">View repository ↗</a></article>
+    </div>
+  </div></section>
+
+  <section id="anime"><div class="wrap">
+    <div class="section-head"><div><div class="mono">03 / Anime corner</div><h2>Favorite characters.</h2></div><p>Sudut kecil untuk karakter anime favorit yang memberi warna di luar dunia coding.</p></div>
+    <div class="anime-wrap">
+      <article class="anime-card"><div class="anime-art">✦</div><div><h3>Favorite character #01</h3><p>Nama karakter belum dikonfirmasi.</p></div></article>
+      <article class="anime-card"><div class="anime-art">☾</div><div><h3>Favorite character #02</h3><p>Nama karakter belum dikonfirmasi.</p></div></article>
+      <article class="anime-card"><div class="anime-art">❀</div><div><h3>Favorite character #03</h3><p>Nama karakter belum dikonfirmasi.</p></div></article>
+    </div>
+    <p class="notice">Catatan: karakter favorit belum bisa dipastikan dari profil publik yang diperiksa. Ganti tiga slot ini dengan karakter pilihan Zii-Han setelah dikonfirmasi.</p>
+  </div></section>
+
+  <section id="contact"><div class="wrap"><div class="contact">
+    <div><div class="mono">LET'S CONNECT</div><h2>Have an idea? Let's build.</h2><p>Find me around the internet.</p></div>
+    <div class="socials"><a class="btn primary" href="https://github.com/zii-han" target="_blank" rel="noreferrer">GitHub ↗</a><a class="btn" href="https://www.instagram.com/zii._han2510/" target="_blank" rel="noreferrer">Instagram ↗</a></div>
+  </div></div></section>
+</main>
+<footer class="wrap"><span>© <span id="year"></span> Zii-Han. Built with curiosity.</span><span>Still learning. Still creating. ✦</span></footer>
+<script>
+  const menu=document.getElementById('menu'), links=document.getElementById('navlinks');
+  menu.addEventListener('click',()=>links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+  document.getElementById('year').textContent=new Date().getFullYear();
+</script>
 </body>
 </html>
